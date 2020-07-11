@@ -42,7 +42,7 @@
 							yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom
 							heave to.
 						</p>
-						<button type="button" class="btn btn-sm btn-light btn-delete">
+						<button type="button" id="delete-button" class="btn btn-sm btn-light btn-delete">
 							Delete entry
 						</button>
 					</div>
@@ -76,6 +76,7 @@
 								<textarea
 									class="form-control"
 									name="postContent"
+									id="post-content"
 									rows="3"
 									placeholder="Enter post content"
 									required
@@ -100,6 +101,7 @@
 								<input
 									type="text"
 									class="form-control"
+									id ="post-url"
 									name="postImg"
 									aria-describedby="postTitle"
 									placeholder="Enter post author"
@@ -108,7 +110,7 @@
 								/>
 							</div>
 
-							<button type="submit" class="btn btn-primary">
+							<button type="submit" id= "submit-button" class="btn btn-primary">
 								Submit
 							</button>
 						</form>
