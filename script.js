@@ -36,3 +36,20 @@ submitButton.addEventListener('click', ($event) => {
   // And we will try to reset the form so that we can write new inputs
   document.querySelector('form-group').reset();
 });
+
+const deleteButton = document.createElement('button');
+deleteButton.type = `button`;
+deleteButton.classList.add('btn', 'btn-sm', 'btn-light', 'btn-delete');
+deleteButton.textContent = 'delte entry';
+const parent = document.getElementsByClassName('card-body');
+parent.appendChild(deleteButton);
+
+// make out delete function ($event)
+const deleteFunction = ($event) => {
+	$event.currentTarget.parentElement.remove();
+};
+// way to delete the card : $event.currentTarget.parentElement.remove();
+// loop over them and attach a listener
+deleteButton.forEach((button) => {
+	button.addEventListener('click', deleteFunction);
+});
