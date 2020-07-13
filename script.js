@@ -2,11 +2,12 @@ console.log('it works');
   const newPostList = document.getElementById('post-list');
   const divCard = document.querySelector('.card');
   const cardBody = document.getElementsByClassName('card-body');
-  const cardTitle = document.getElementsByClassName('post-title');
-  const cardText = document.getElementsByClassName('card-text');
+  const cardTitle = document.getElementById('postTitle');
+  const cardText = document.getElementById('post-content');
   const cardAuthor = document.querySelector(`[name = "postAuthor"]`);
   const deleteButton = document.getElementById('delete-button');
   const submitButton = document.getElementById('submit-button');
+  const buttonHidden = document.getElementById('show-form');
 
   const myPost = () => {
     const myHtml =`
