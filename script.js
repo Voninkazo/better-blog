@@ -8,7 +8,9 @@ console.log('it works');
   const deleteButton = document.getElementById('delete-button');
   const submitButton = document.getElementById('submit-button');
   const buttonHidden = document.getElementById('show-form');
+  const invalidInput = document.getElementById('error-message');
   const myPost = () => {
+    // const today = myDates();
     const myHtml =`
     <div class="card">
 					<img
@@ -24,13 +26,19 @@ console.log('it works');
 						<button type="button" id="delete-button" class="btn btn-sm btn-light btn-delete">
 							Delete entry
 						</button>
-          </div>
-    `
+          </div>`;
+    //       <div cass ="card-footer text-muted">
+    //         // ${today.toLocaleDatesStrings()}
+    //       </div>
+    // `
     return myHtml;
   }
+  
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    divCard.insertAdjacentHTML("beforebegin", myPost());
+    const form = e.target;
+      const newPost = myPost(form);
+      divCard.insertAdjacentHTML("beforebegin", newPost);
 });
 
 buttonHidden.addEventListener('click', (e) => {
@@ -40,3 +48,15 @@ buttonHidden.addEventListener('click', (e) => {
       divCard.classList.remove('hidden');
   };
 });
+
+const handleDelete = (e) => {
+  // if you click with something that have a btn-delete class, I want you to do this :
+  if (e.target.classList.contains('btn-delete')) {
+    const deleteButton = e.target;
+    // delete the closet element with the .card class
+    deleteButton.closest('.card').remove();
+  }
+};
+buttonHidden.addEventListener('click', (event));
+// event delegation
+document.addEventListener('click', handleDelete);
