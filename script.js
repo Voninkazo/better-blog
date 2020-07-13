@@ -8,7 +8,6 @@ console.log('it works');
   const deleteButton = document.getElementById('delete-button');
   const submitButton = document.getElementById('submit-button');
   const buttonHidden = document.getElementById('show-form');
-
   const myPost = () => {
     const myHtml =`
     <div class="card">
@@ -32,4 +31,12 @@ console.log('it works');
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
     divCard.insertAdjacentHTML("beforebegin", myPost());
+});
+
+buttonHidden.addEventListener('click', (e) => {
+  if (divCard.classList !== "hidden") {
+      divCard.classList.add('hidden');
+  } else {
+      divCard.classList.remove('hidden');
+  };
 });
